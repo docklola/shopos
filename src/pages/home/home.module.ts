@@ -1,3 +1,5 @@
+// import { HomeService } from './../../providers/home-service/home-service';
+import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { HomePage } from './home';
@@ -7,10 +9,9 @@ import { HomePage } from './home';
     HomePage,
   ],
   imports: [
+    ComponentsModule,
     IonicPageModule.forChild(HomePage),
   ],
-  exports: [
-    HomePage
-  ]
+  // providers:[HomeService]
 })
 export class HomePageModule {}

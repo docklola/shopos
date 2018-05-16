@@ -1,3 +1,4 @@
+import { HomeService } from './../providers/home-service/home-service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,6 +9,7 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpBaseProvider } from '../providers/http-base/http-base';
+
 
 @NgModule({
   declarations: [MyApp],
@@ -21,8 +23,9 @@ import { HttpBaseProvider } from '../providers/http-base/http-base';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HttpBaseProvider
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    HttpBaseProvider,
+    HomeService
   ]
 })
-export class AppModule {}
+export class AppModule { }

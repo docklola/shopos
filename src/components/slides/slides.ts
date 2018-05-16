@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'slides',
@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
 })
 export class SlidesComponent {
 
-  text: string;
+  @Input() currentPics;
 
   constructor() {
-    console.log('Hello SlidesComponent Component');
-    this.text = 'Hello World';
+  }
+
+  ionViewDidEnter(){
   }
 
 }

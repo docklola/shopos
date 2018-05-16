@@ -1,3 +1,4 @@
+import { HomeService } from './../../providers/home-service/home-service';
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
 
@@ -8,8 +9,15 @@ import { NavController, IonicPage } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  currentPic;
+  constructor(public navCtrl: NavController, private homeService: HomeService) {
 
+  }
+
+  async ionViewCanEnter() {
+    this.homeService.getBannerList().subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
