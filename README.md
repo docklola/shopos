@@ -1,7 +1,7 @@
-#shop3.0
+# shop3.0
 使用ionic3 + angular5
 
-##Useage
+## Useage
 need node.js LTS
 npm i -g ionic cordova
 npm i
