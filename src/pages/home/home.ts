@@ -1,5 +1,5 @@
 import { HomeService } from './../../providers/home-service/home-service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
 
 @IonicPage()
@@ -7,16 +7,21 @@ import { NavController, IonicPage } from 'ionic-angular';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit{
 
-  currentPic;
+  currentPics;
   constructor(public navCtrl: NavController, private homeService: HomeService) {
 
   }
 
-  async ionViewCanEnter() {
+  async ionViewWillEnter() {
+   
+  }
+
+  ngOnInit() {
     this.homeService.getBannerList().subscribe(res => {
-      console.log(res);
+      this.currentPics = res['data']['data'];
+      console.log(this.currentPics);
     });
   }
 
