@@ -1,3 +1,22 @@
 search-modal {
-
+  .searchBox {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    width: 85%;
+    padding: 5px 25px;
+    color: #999;
+    border: none;
+    font-size: 13px;
+  }
+  .top-searchBar {
+    width: 100%;
+    padding: 25px 0 5px 15px;
+    display: flex;
+  }
+  .cancelButton {
+    padding: 5px 15px 5px 10px;
+    flex: 1;
+    text-align: right;
+    color: #999;
+  }
 }

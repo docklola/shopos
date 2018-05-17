@@ -1,5 +1,5 @@
 import { SearchModalComponent } from './../Modals/search-modal/search-modal';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 
 /**
@@ -15,6 +15,7 @@ import { ModalController } from 'ionic-angular';
 })
 export class SearchComponent {
 
+  @Input() value: string;
   constructor(public modalCtrl: ModalController) {
   }
 

@@ -1,6 +1,6 @@
 import { HomeService } from './../../providers/home-service/home-service';
-import { Component } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, IonicPage, Content } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -9,16 +9,37 @@ import { NavController, IonicPage } from 'ionic-angular';
 })
 export class HomePage {
 
+  @ViewChild(Content) content: Content;
   currentPics;
+  isSearchBarShow: boolean = true;
   constructor(public navCtrl: NavController, private homeService: HomeService) {
 
   }
 
-  async ionViewDidEnter() {
+  ionViewDidEnter() {
     this.homeService.getBannerList().subscribe(res => {
       this.currentPics = res['data']['data'];
       console.log(this.currentPics);
     });
+  }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
+
+  scrollHandler(e) {
+    if (this.content.contentTop === 0) {
+      this.isSearchBarShow = true;
+    }
+    else {
+      this.isSearchBarShow = false;
+    }
+    console.log(this.content.isScrolling);
   }
 
 }

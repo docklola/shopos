@@ -1,3 +1,9 @@
 page-home {
-
+  .top-searchBar {
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+  }
 }

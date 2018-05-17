@@ -1,6 +1,12 @@
-<ion-content>
+<ion-header></ion-header>
+<ion-content (ionScroll)="scrollHandler($event)"  scrollDownOnLoad="true" fullscreen="true">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div>
     <slides [currentPics]="currentPics" *ngIf="currentPics"></slides>
   </div>
-  <search></search>
+  <div class="top-searchBar" *ngIf="isSearchBarShow">
+    <search></search>
+  </div>
 </ion-content>

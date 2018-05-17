@@ -1,4 +1,6 @@
+
 import { Component } from '@angular/core';
+import { ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the SearchModalComponent component.
@@ -12,11 +14,11 @@ import { Component } from '@angular/core';
 })
 export class SearchModalComponent {
 
-  text: string;
+  constructor(private viewCtrl: ViewController) {
+  }
 
-  constructor() {
-    console.log('Hello SearchModalComponent Component');
-    this.text = 'Hello World';
+  cancel() {
+    this.viewCtrl.dismiss();
   }
 
 }
