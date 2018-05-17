@@ -1,8 +1,8 @@
 // import { HomeService } from './../../providers/home-service/home-service';
-import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { HomePage } from './home';
+import { ComponentsModule } from '../../components/components.module'
 
 @NgModule({
   declarations: [
@@ -14,4 +14,4 @@ import { HomePage } from './home';
   ],
   // providers:[HomeService]
 })
-export class HomePageModule {}
+export class HomePageModule { }

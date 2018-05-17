@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ModalsModule } from '../components/Modals/modals.module';
 
 
 
@@ -15,7 +16,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    ProvidersModule
+    ProvidersModule,
+    ModalsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp],

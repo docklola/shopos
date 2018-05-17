@@ -1,4 +1,6 @@
+import { SearchModalComponent } from './../Modals/search-modal/search-modal';
 import { Component } from '@angular/core';
+import { ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the SearchComponent component.
@@ -8,15 +10,17 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'search',
-  templateUrl: 'search.html'
+  templateUrl: 'search.html',
+  // entryComponents:[SearchComponent]
 })
 export class SearchComponent {
 
-  text: string;
-
-  constructor() {
-    console.log('Hello SearchComponent Component');
-    this.text = 'Hello World';
+  constructor(public modalCtrl: ModalController) {
   }
 
+  openSearchModal() {
+    let searchModal = this.modalCtrl.create(SearchModalComponent);
+    searchModal.present();
+  }
 }
+
