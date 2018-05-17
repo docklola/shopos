@@ -15,8 +15,4 @@ export class SlidesComponent implements OnInit {
     console.log(this.currentPics);
   }
 
-  ionViewDidEnter(){
-    console.log(this.currentPics);
-  }
-
 }
