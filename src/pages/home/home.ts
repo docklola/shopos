@@ -1,6 +1,6 @@
 import { HomeService } from './../../providers/home-service/home-service';
 import { Component, ViewChild } from '@angular/core';
-import { NavController, IonicPage, Content } from 'ionic-angular';
+import { NavController, IonicPage, Content, Refresher } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -10,17 +10,17 @@ import { NavController, IonicPage, Content } from 'ionic-angular';
 export class HomePage {
 
   @ViewChild(Content) content: Content;
+  @ViewChild(Refresher) refresher: Refresher;
   currentPics;
+  homeGoods;
   isSearchBarShow: boolean = true;
   constructor(public navCtrl: NavController, private homeService: HomeService) {
 
   }
 
   ionViewDidEnter() {
-    this.homeService.getBannerList().subscribe(res => {
-      this.currentPics = res['data']['data'];
-      console.log(this.currentPics);
-    });
+    this.getBanner();
+    this.getHomeGoodsList();
   }
 
   doRefresh(refresher) {
@@ -32,14 +32,18 @@ export class HomePage {
     }, 2000);
   }
 
-  scrollHandler(e) {
-    if (this.content.contentTop === 0) {
-      this.isSearchBarShow = true;
-    }
-    else {
-      this.isSearchBarShow = false;
-    }
-    console.log(this.content.isScrolling);
+  getBanner() {
+    this.homeService.getBannerList().subscribe(res => {
+      this.currentPics = res['data']['data'];
+      // console.log(this.currentPics);
+    });
+  }
+
+  getHomeGoodsList() {
+    this.homeService.getHomeGoodsList().subscribe(res => {
+      this.homeGoods = res['data']['goods'];
+      console.log(this.homeGoods,1);
+    })
   }
 
 }

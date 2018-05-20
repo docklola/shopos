@@ -1,0 +1,11 @@
+<!-- Generated template for the GridGoodsListComponent component -->
+<ion-grid>
+  <ion-row>
+    <ion-col class="stable-bg goods-item" col-6 *ngFor="let item of goods">
+      <div class="light-bg">
+        <img class="goodsImg" src="{{item.titleImg}}">
+        <p>{{item.name}}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,23 @@
+grid-goods-list {
+  .goods-item  {
+    padding: 2px;
+  }
+  .goodsImg {
+    height: 180px;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  .stable-bg {
+      background-color: #f8f8f8;
+  }
+  .light-bg {
+    background-color: #fff;
+    border-radius: 5px;
+    padding-bottom: 10px;
+  }
+  p {
+      padding: 0;
+      margin: 0;
+  }
+}

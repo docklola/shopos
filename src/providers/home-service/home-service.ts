@@ -19,6 +19,9 @@ export class HomeService extends HttpBaseProvider {
     return super.get('http://shopos.wuliangit.com/api/v1/public/banner/getBannerList');
   }
 
+  getHomeGoodsList() {
+    return super.get('http://shopos.wuliangit.com/api/v1/public/goods/indexGoods');
+  }
   
 
 }

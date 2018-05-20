@@ -1,12 +1,19 @@
-<ion-header></ion-header>
-<ion-content (ionScroll)="scrollHandler($event)"  scrollDownOnLoad="true" fullscreen="true">
+<ion-header>
+  <div class="top-searchBar" *ngIf="isSearchBarShow">
+    <search></search>
+  </div>
+</ion-header>
+
+<ion-content class="content-bg" fullscreen="true">
+
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
+    <!-- <div>321312</div> -->
   </ion-refresher>
   <div>
     <slides [currentPics]="currentPics" *ngIf="currentPics"></slides>
   </div>
-  <div class="top-searchBar" *ngIf="isSearchBarShow">
-    <search></search>
+  <div>
+    <grid-goods-list [goods]="homeGoods" *ngIf="homeGoods"></grid-goods-list>
   </div>
 </ion-content>
