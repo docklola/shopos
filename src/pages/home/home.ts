@@ -20,7 +20,7 @@ export class HomePage {
 
   ionViewDidEnter() {
     this.getBanner();
-    // this.getHomeGoodsList();
+    this.getHomeGoodsList();
   }
 
   doRefresh(refresher) {
@@ -39,11 +39,11 @@ export class HomePage {
     });
   }
 
-  // getHomeGoodsList() {
-  //   this.homeService.getHomeGoodsList().subscribe(res => {
-  //     this.homeGoods = res['data']['goods'];
-  //     console.log(this.homeGoods,1);
-  //   })
-  // }
+  getHomeGoodsList() {
+    this.homeService.getHomeGoodsList().subscribe(res => {
+      this.homeGoods = res['data']['goods'];
+      console.log(this.homeGoods,1);
+    })
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Path, GET } from './../../rest/index';
+import { Path, GET, QueryParams, POST, Body } from './../../rest/index';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -7,16 +7,14 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class HttpBaseProvider {
 
-  
+
   constructor(public http: HttpClient) {
   }
 
   @GET
-  get() {
-  }
+  get(@QueryParams queryObj?: any) { }
 
-  post(url: string, options?) {
-    return this.http.post(url, options);
-  }
+  @POST
+  post(@Body body?: any) { }
 
 }
