@@ -1,7 +1,7 @@
 import { HttpBaseProvider } from './../http-base/http-base';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Path, GET } from './../../rest/index';
 /*
   Generated class for the HomeServiceProvider provider.
 
@@ -15,13 +15,15 @@ export class HomeService extends HttpBaseProvider {
     super(http);
   }
 
-  getBannerList() {
-    return super.get('http://shopos.wuliangit.com/api/v1/public/banner/getBannerList');
+  @GET
+  @Path('/public/banner/getBannerList')
+  getBannerList(): any {
+    return super.get();
   }
 
-  getHomeGoodsList() {
-    return super.get('http://shopos.wuliangit.com/api/v1/public/goods/indexGoods');
-  }
-  
+  // getHomeGoodsList() {
+  //   return super.get('http://shopos.wuliangit.com/api/v1/public/goods/indexGoods');
+  // }
+
 
 }
