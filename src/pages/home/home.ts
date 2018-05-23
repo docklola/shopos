@@ -1,6 +1,7 @@
 import { HomeService } from './../../providers/home-service/home-service';
 import { Component, ViewChild } from '@angular/core';
 import { NavController, IonicPage, Content, Refresher } from 'ionic-angular';
+import { HttpParams } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -21,6 +22,9 @@ export class HomePage {
   ionViewDidEnter() {
     this.getBanner();
     this.getHomeGoodsList();
+    let a:HttpParams = new HttpParams();
+    a.set('a','a');
+    console.log(a.set('a','a'));
   }
 
   doRefresh(refresher) {
