@@ -1,6 +1,5 @@
-import { Path, GET, QueryParams, POST, Body } from './../../rest/index';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Path, GET, QueryParams, POST, Body } from './../../rest/index';
 
 
 @Path('http://shopos.wuliangit.com/api/v1/')
@@ -8,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class HttpBaseProvider {
 
 
-  constructor(public http: HttpClient) {
+  constructor() {
   }
 
   @GET
