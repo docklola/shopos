@@ -31,7 +31,7 @@ import { MyInterceptor } from '../providers/interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: MyInterceptor,
       multi: true
-    }
+    },
   ]
 })
 export class AppModule { }

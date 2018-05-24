@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Injectable, keyframes } from '@angular/core';
 import { Md5 } from 'ts-md5/dist/md5';
 
@@ -18,8 +19,22 @@ export class SignService {
         return urlPath.substring(0, urlPath.length - 1);
     }
 
-    signByMD5(url: string, params: { [key: string]: any }) {
-        const sign: string = this.formatSortParams(params);
+    formatUrlToParams(url: string) {
+        let params: Object = new Object();
+        if (url != null || url != '') {
+            let temp = url.split('&');
+            temp.forEach(element => {
+                if (element.indexOf('=') != -1) {
+                    params[element.slice(0, element.indexOf('='))] = element.slice(element.indexOf('=') + 1);
+                }
+            });
+        }
+        return params;
+    }
+
+    signByMD5(url: string, params: HttpParams) {
+        let paramsUrl = this.formatUrlToParams(params.toString());
+        const sign: string = this.formatSortParams(paramsUrl);
         return Md5.hashStr(url + sign);
     }
 

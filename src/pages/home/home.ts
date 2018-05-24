@@ -22,9 +22,6 @@ export class HomePage {
   ionViewDidEnter() {
     this.getBanner();
     this.getHomeGoodsList();
-    let a:HttpParams = new HttpParams();
-    a.set('a','a');
-    console.log(a.set('a','a'));
   }
 
   doRefresh(refresher) {
@@ -39,7 +36,7 @@ export class HomePage {
   getBanner() {
     this.homeService.getBannerList().subscribe(res => {
       this.currentPics = res['data']['data'];
-      // console.log(this.currentPics);
+      console.log(this.currentPics);
     });
   }
 

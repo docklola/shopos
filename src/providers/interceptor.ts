@@ -24,9 +24,11 @@ export class MyInterceptor implements HttpInterceptor {
     }
 
     getSignedParams(params: HttpParams, url: string) {
-        params.set('timestamp', (new Date()).valueOf().toString());
-        params.set('token', '12');
-        params.set('userId', '21');
-        return this.sign.signByMD5(url, params);
+        let paramTem = new HttpParams({ fromString: params.toString() });
+        let pt = paramTem.set('userId', '21')
+            .set('timestamp', (new Date()).valueOf().toString())
+            .set('token', '12')
+        let pt1 = new HttpParams({ fromString: pt.toString() });
+        return this.sign.signByMD5(url, pt1);
     }
 }

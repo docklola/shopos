@@ -1,20 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Path, GET, QueryParams, POST, Body } from './../../rest/index';
+import { APP_BASE_URL } from './../api-url/api-url';
 
-@Path('http://shopos.wuliangit.com/api/v1/')
 @Injectable()
 export class HttpBaseProvider {
 
-
-  constructor() {
+  constructor(public http: HttpClient,) {
   }
 
-  @GET
-  @Path('public/goods/get')
-  get(@QueryParams a?) { }
+  get(url: string, option?: any) {
+    url = APP_BASE_URL + url;
+    return this.http.get(url, option);
+  }
 
-  @POST
-  post(@Body body?: any) { }
+  post(url: string, body?: any) {
+    url = APP_BASE_URL + url;
+    return this.post(url, body);
+  }
 
 }
-// member/info
