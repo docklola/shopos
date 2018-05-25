@@ -26,7 +26,6 @@ export class HomePage {
   ionViewDidEnter() {
     this.getBanner();
     this.getHomeGoodsList();
-    this.login();
   }
 
   doRefresh(refresher) {
@@ -50,12 +49,6 @@ export class HomePage {
       this.homeGoods = res['data']['goods'];
       console.log(this.homeGoods, 1);
     })
-  }
-
-  login() {
-    this.loginService.login({username:'15726814825',password:'123456',timestamp:new Date().valueOf()}).subscribe(data => {
-      console.log(data);
-    });
   }
 
 }

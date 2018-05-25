@@ -9,6 +9,6 @@ import { MyPage } from './my';
   imports: [
     IonicPageModule.forChild(MyPage),
   ],
-  exports: [MyPage]
+  exports: [MyPage],
 })
 export class MyPageModule { }

@@ -13,4 +13,8 @@ export class LoginProvider extends HttpBaseProvider {
     return super.post('member/login',userInfo,{ headers:{'Content-Type': 'application/x-www-form-urlencoded'}});
   }
 
+  getMemberInfo() {
+    return super.get('member/info');
+  }
+
 }

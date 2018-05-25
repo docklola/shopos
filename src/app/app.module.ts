@@ -13,6 +13,7 @@ import { MyInterceptor } from '../providers/interceptor';
 import {Ng2Webstorage} from 'ngx-webstorage';
 
 
+
 @NgModule({
   declarations: [MyApp],
   imports: [
@@ -20,7 +21,7 @@ import {Ng2Webstorage} from 'ngx-webstorage';
     IonicModule.forRoot(MyApp),
     ProvidersModule,
     ModalsModule,
-    Ng2Webstorage
+    Ng2Webstorage,
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp],
@@ -28,11 +29,11 @@ import {Ng2Webstorage} from 'ngx-webstorage';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: MyInterceptor, 
-    //   multi: true
-    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyInterceptor, 
+      multi: true
+    },
   ]
 })
 export class AppModule { }
