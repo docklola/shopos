@@ -5,17 +5,17 @@ import { APP_BASE_URL } from './../api-url/api-url';
 @Injectable()
 export class HttpBaseProvider {
 
-  constructor(public http: HttpClient,) {
+  constructor(public http: HttpClient, ) {
   }
 
-  get(url: string, option?: any) {
+  get(url: string, option?: any): any {
     url = APP_BASE_URL + url;
     return this.http.get(url, option);
   }
 
-  post(url: string, body?: any) {
+  post(url: string, body?: any, options?: any): any {
     url = APP_BASE_URL + url;
-    return this.post(url, body);
+    return this.http.post(url, body, options);
   }
 
 }

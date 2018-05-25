@@ -10,7 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ModalsModule } from '../components/Modals/modals.module';
 import { MyInterceptor } from '../providers/interceptor';
-
+import {Ng2Webstorage} from 'ngx-webstorage';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { MyInterceptor } from '../providers/interceptor';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ProvidersModule,
-    ModalsModule
+    ModalsModule,
+    Ng2Webstorage
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp],
@@ -27,11 +28,11 @@ import { MyInterceptor } from '../providers/interceptor';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: MyInterceptor,
-      multi: true
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: MyInterceptor, 
+    //   multi: true
+    // },
   ]
 })
 export class AppModule { }
