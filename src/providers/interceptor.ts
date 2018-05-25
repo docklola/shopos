@@ -19,7 +19,7 @@ export class MyInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (req.url.indexOf('public') === -1 && req.url.indexOf('login') === -1) {
             let paramsTem = new HttpParams({ fromString: req.params.toString() });
-            let params = paramsTem.append('timestamp', '2121')
+            let params = paramsTem.append('timestamp', (new Date()).valueOf().toString())
                 .append('sign', this.getSignedParams(req.params, req.url).toString())
                 .append('userId', this.userId);
             const clonedRequest = req.clone({
