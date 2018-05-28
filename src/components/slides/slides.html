@@ -1,6 +1,6 @@
 <!-- Generated template for the SlidesComponent component -->
 <ion-slides pager>
-    <ion-slide *ngFor="let item of currentPics">
-        <img src="{{item.pictureUrl}}">
-    </ion-slide>
+  <ion-slide *ngFor="let item of currentPics">
+    <img src="{{item.pictureUrl ? item.pictureUrl : item}}">
+  </ion-slide>
 </ion-slides>
