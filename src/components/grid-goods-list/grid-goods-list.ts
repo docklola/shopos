@@ -9,7 +9,8 @@ export class GridGoodsListComponent {
 
   @Input() goods;
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController) {
   }
 
   goDetail(goodsId) {

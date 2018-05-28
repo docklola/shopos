@@ -9,7 +9,12 @@
 
 <ion-content>
   <div class="goodsPics">
-  <slides [currentPics]="currentPics" *ngIf="currentPics"></slides>
-</div>
+    <slides [currentPics]="currentPics" *ngIf="currentPics"></slides>
+  </div>
 
+  <div>
+    <h3>{{goods.name}}</h3>
+    <p>{{goods.price}}</p>
+  </div>
+  
 </ion-content>

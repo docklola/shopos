@@ -1,7 +1,7 @@
 import { Goods } from './../../model/goods';
 import { GoodsDetailProvider } from './../../providers/goods-detail/goods-detail';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
 
 
 @IonicPage()
@@ -12,12 +12,18 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 export class GoodsDetailPage {
 
   currentPics;
-  goods: Goods;
+  goods: Goods = new Goods();
+  loadingMod;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public loading: LoadingController,
     private goodsDetailService: GoodsDetailProvider) {
+      this.loadingMod = this.loading.create();
+  }
+  ionViewWillEnter(){
+   this.loadingMod.present();
   }
 
   ionViewDidLoad() {
@@ -26,6 +32,7 @@ export class GoodsDetailPage {
       console.log(data);
       this.goods = data['data']['goods'];
       this.currentPics = this.goods.images.split('&&');
+      this.loadingMod.dismiss();
     });
   }
 
