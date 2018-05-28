@@ -13,12 +13,13 @@ import { MyInterceptor } from '../providers/interceptor';
 import {Ng2Webstorage} from 'ngx-webstorage';
 
 
-
 @NgModule({
   declarations: [MyApp],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      tabsHideOnSubPages: 'true'
+    }),
     ProvidersModule,
     ModalsModule,
     Ng2Webstorage,

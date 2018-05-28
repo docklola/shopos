@@ -2,7 +2,7 @@
 <ion-grid>
   <ion-row>
     <ion-col class="stable-bg goods-item" col-6 *ngFor="let item of goods">
-      <div class="light-bg">
+      <div class="light-bg" (click)="goDetail(item.goodsId)">
         <img class="goodsImg" src="{{item.titleImg}}">
         <p>{{item.name}}</p>
         <p class="price">￥{{item.price}}</p>

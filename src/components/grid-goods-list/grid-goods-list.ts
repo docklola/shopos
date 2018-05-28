@@ -1,3 +1,4 @@
+import { NavController } from 'ionic-angular';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -8,7 +9,11 @@ export class GridGoodsListComponent {
 
   @Input() goods;
 
-  constructor() {
+  constructor(public navCtrl: NavController) {
+  }
+
+  goDetail(goodsId) {
+    this.navCtrl.push('GoodsDetailPage', { goodsId: goodsId });
   }
 
 }
