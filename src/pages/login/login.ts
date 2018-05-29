@@ -28,7 +28,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    // this.login();
+     this.login();
   }
   login() {
     let a = { username: '15726814825', password: '123456', timestamp: new Date().valueOf() };
