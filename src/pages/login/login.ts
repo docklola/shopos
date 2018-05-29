@@ -18,6 +18,8 @@ export class LoginPage {
   public userId: string;
   @LocalStorage()
   private token: string;
+  @LocalStorage()
+  public isLogin: boolean;
 
   constructor(
     public navCtrl: NavController,
@@ -28,7 +30,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-     this.login();
+    this.login();
   }
   login() {
     let a = { username: '15726814825', password: '123456', timestamp: new Date().valueOf() };
@@ -36,6 +38,7 @@ export class LoginPage {
       if (data.msg === 'OK') {
         this.userId = data['data']['userId'];
         this.token = data['data']['token'];
+        this.isLogin = true;
         this.getMemberInfo();
       }
     });
