@@ -27,7 +27,7 @@ export class MyPage {
   ionViewDidLoad() {
     
     // this.viewCtrl.dismiss();
-    // this.navCtrl.push('LoginPage');
+    this.navCtrl.push('LoginPage');
   }
 
 }
