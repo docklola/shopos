@@ -18,11 +18,10 @@ import {Ng2Webstorage} from 'ngx-webstorage';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp,{
-      tabsHideOnSubPages: 'true'
-    }),
+      tabsHideOnSubPages: 'true'}),
     ProvidersModule,
     ModalsModule,
-    Ng2Webstorage,
+    Ng2Webstorage
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp],

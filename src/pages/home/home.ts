@@ -1,3 +1,4 @@
+import { LocalStorageService } from 'ngx-webstorage';
 import { LoginProvider } from './../../providers/login/login';
 import { HomeService } from './../../providers/home-service/home-service';
 import { Component, ViewChild } from '@angular/core';
@@ -19,13 +20,14 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     private homeService: HomeService,
-    private loginService: LoginProvider) {
+    private loacalStorage: LocalStorageService) {
 
   }
 
   ionViewDidEnter() {
     this.getBanner();
     this.getHomeGoodsList();
+    this.loacalStorage.clear();
   }
 
   doRefresh(refresher) {

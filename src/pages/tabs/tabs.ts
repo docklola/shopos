@@ -12,8 +12,5 @@ export class TabsPage {
   tab2Root = 'CategoryPage';
   tab3Root = 'ActivityPage';
   tab4Root = 'MyPage';
-
-  constructor() {
-
-  }
+  constructor() { }
 }

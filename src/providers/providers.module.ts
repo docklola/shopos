@@ -1,3 +1,4 @@
+import { ValidationProvider } from './validation/validation';
 import { GoodsDetailProvider } from './goods-detail/goods-detail';
 import { ApiUrlProvider } from './api-url/api-url';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +17,8 @@ import { EnvironmentProvider } from '../providers/environment/environment';
         ApiUrlProvider,
         LoginProvider,
         EnvironmentProvider,
-        GoodsDetailProvider
+        GoodsDetailProvider,
+        ValidationProvider
     ]
 })
 export class ProvidersModule { }
