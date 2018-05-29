@@ -19,15 +19,15 @@ export class MyPage {
     public viewCtrl: ViewController,
     private loacalStorage: LocalStorageService,
     private validation: ValidationProvider) {
-      this.memberInfo = this.loacalStorage.retrieve('memberInfo');
+      // this.memberInfo = this.loacalStorage.retrieve('memberInfo');
       console.log(this.memberInfo);
-  }
+  }s
 
 
   ionViewDidLoad() {
     
     // this.viewCtrl.dismiss();
-    this.navCtrl.push('LoginPage');
+    // this.navCtrl.push('LoginPage');
   }
 
 }
