@@ -26,10 +26,13 @@ export class MyPage {
     this.memberInfo.photo = 'sa';
   }
 
-  ionViewDidLoad() {
-    this.loacalStorage.observe('memberInfo').subscribe(data => {
-      this.memberInfo = data;
-    });
+  ionViewWillEnter() {
+    // this.loacalStorage.observe('memberInfo').subscribe(data => {
+    //   this.memberInfo = data;
+    // });
+    if (!this.validation.isNullOrUndefined(this.loacalStorage.retrieve('memberInfo'))) {
+      this.memberInfo = this.loacalStorage.retrieve('memberInfo');
+    }
     // this.viewCtrl.dismiss();
     // this.navCtrl.push('LoginPage');
   }
@@ -39,8 +42,9 @@ export class MyPage {
   }
 
   goSetting() {
-    this.login()
-
+    if (!this.isLogin) {
+      this.login()
+    }
   }
 
 }

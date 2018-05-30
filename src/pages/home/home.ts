@@ -27,7 +27,7 @@ export class HomePage {
   ionViewDidEnter() {
     this.getBanner();
     this.getHomeGoodsList();
-    this.loacalStorage.clear();
+    // this.loacalStorage.clear();
   }
 
   doRefresh(refresher) {
