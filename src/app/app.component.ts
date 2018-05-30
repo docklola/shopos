@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LocalStorage } from 'ngx-webstorage';
+// import { LocalStorage } from 'ngx-webstorage';
 
 
 @Component({
@@ -10,8 +10,8 @@ import { LocalStorage } from 'ngx-webstorage';
 })
 export class MyApp implements OnInit{
   rootPage:any = 'TabsPage';
-  @LocalStorage()
-  public isLogin: boolean = false;
+  // @LocalStorage()
+  // public isLogin: boolean = false;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
