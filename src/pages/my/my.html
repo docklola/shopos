@@ -1,6 +1,8 @@
 <ion-content>
-  <div (click)="goSetting()">
-    <img class="userPhoto" src="{{memberInfo.photo}}">
-    <span>{{memberInfo.nickname?memberInfo.nickname:memberInfo.username}}</span>
+  <div>
+    <div class="brief" (click)="goSetting()">
+      <img class="userPhoto" src="{{memberInfo.photo}}">
+      <span>{{memberInfo.nickname?memberInfo.nickname:memberInfo.username}}</span>
+    </div>
   </div>
 </ion-content>
